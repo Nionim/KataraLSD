@@ -1,8 +1,0 @@
-name: KataraLSD
-version: '0.0.0-DEV'
-main: delta.cion.KataraLSD
-api-version: '1.19'
-authors: [ Carde2 ]
-description:
-  For: Project~Violette
-website: https://discord.gg/MEBkvJbe4P

@@ -1,10 +1,12 @@
 plugins {
     kotlin("jvm") version "2.1.0"
     id("com.gradleup.shadow") version "8.3.0"
+    id("de.eldoria.plugin-yml.bukkit") version "0.7.1"
 }
 
-group = "delta.cion"
-version = "1.0.0-Release"
+// ===================== //
+//        Depends        //
+// ===================== //
 
 repositories {
     mavenCentral()
@@ -22,27 +24,31 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
 }
 
-kotlin {
-    jvmToolchain(17)
+// ===================== //
+//        Process        //
+// ===================== //
+
+group = "delta.cion"
+version = "1.0.0-Release"
+
+bukkit {
+    name = rootProject.name
+    version = this.version
+    main = "delta.cion.KataraLSD"
+
+    authors = listOf("Carde2")
+    description = "By: DeltaCion"
+    website = "https://discord.gg/MEBkvJbe4P"
+    apiVersion = "1.19"
 }
 
 tasks {
     build {
         dependsOn(shadowJar)
-        dependsOn(processResources)
     }
 
     shadowJar {
         mergeServiceFiles()
         archiveClassifier.set("")
-    }
-
-    processResources {
-        val props = mapOf("version" to version)
-        inputs.properties(props)
-        filteringCharset = "UTF-8"
-        filesMatching("plugin.yml") {
-            expand(props)
-        }
     }
 }
