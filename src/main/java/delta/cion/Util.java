@@ -7,6 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.List;
@@ -46,9 +48,20 @@ public class Util {
                     return true;
                 }
                 p.reloadConfig();
+                KataraLSD.reloadScheduler();
                 sender.sendMessage("Success");
                 return true;
             }
         };
+    }
+
+    private static int getTime() {
+        LocalTime currentTime = LocalTime.now();
+        return currentTime.getHour();
+    }
+
+    public static boolean isSleepTime() {
+        List<Integer> sh = p.getConfig().getIntegerList("Sleep-At");
+        return sh.contains(getTime());
     }
 }

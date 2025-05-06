@@ -17,6 +17,7 @@ public class Pinger {
     private static final String JSON_PAYLOAD = "{\"userIds\":[%s]}";
 
     public static void ping() {
+        if (Util.isSleepTime()) return;
         for (String s : Util.getIds()) {
             long i = Long.parseLong(Util.getID(s));
             String n = Util.getName(s);
