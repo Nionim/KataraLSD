@@ -1,6 +1,5 @@
 package delta.cion;
 
-import org.glassfish.jersey.server.ContainerResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
