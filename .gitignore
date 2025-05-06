@@ -6,8 +6,6 @@ build
 .gradle
 gradle
 
-src/main/resources/config.yml
-
 *.iml
 *.ipr
 *.iws

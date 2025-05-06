@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "delta.cion"
-version = "0.0.0-DEV"
+version = "1.0.0-Release"
 
 repositories {
     mavenCentral()
