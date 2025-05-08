@@ -5,6 +5,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class KataraLSD extends JavaPlugin {
 
@@ -26,7 +29,13 @@ public class KataraLSD extends JavaPlugin {
 
     public void onEnable() {
         saveDefaultConfig();
-        TGHandler tgHandler = new TGHandler();
+        TelegramBotsApi botsApi = null;
+        try {
+            botsApi = new TelegramBotsApi(DefaultBotSession.class);
+            botsApi.registerBot(new TGHandler());
+        } catch (TelegramApiException e) {
+            Sender.sendConsole(e.toString());
+        }
         runScheduler();
         Bukkit.getCommandMap().register(Util.reload().getName(), Util.reload());
     }
