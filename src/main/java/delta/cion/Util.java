@@ -47,12 +47,17 @@ public class Util {
                     sender.sendMessage("No.");
                     return true;
                 }
-                p.reloadConfig();
-                KataraLSD.reloadScheduler();
-                sender.sendMessage("Success");
+                reloadC(false);
+                Sender.sendConsole("Success reload!");
                 return true;
             }
         };
+    }
+
+    public static void reloadC(boolean isTG) {
+        p.reloadConfig();
+        KataraLSD.reloadScheduler();
+        if (isTG) Sender.sendTelegram("Success reload!");
     }
 
     private static int getTime() {

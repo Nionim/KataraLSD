@@ -25,6 +25,14 @@ public class Pinger {
         }
     }
 
+    public static void PING() {
+        for (String s : Util.getIds()) {
+            long i = Long.parseLong(Util.getID(s));
+            String n = Util.getName(s);
+            pinger(n, i);
+        }
+    }
+
     public static String parseData(JSONObject o) {
         List<String> l = new ArrayList<>();
 
@@ -110,6 +118,7 @@ public class Pinger {
 
         String finallyData = parseData(DATA);
         TGHandler tgHandler = new TGHandler();
-        tgHandler.sendToUser(n, finallyData);
+        String m = String.format("User-Name: %s\n%s", n, finallyData);
+        Sender.sendTelegram(m);
     }
 }

@@ -15,6 +15,7 @@ public class TGHandler extends TelegramLongPollingBot {
 
     public TGHandler() {
         instance = this;
+        Sender.setBot(this);
     }
 
     public static TGHandler getInstance() {
@@ -33,19 +34,6 @@ public class TGHandler extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        // No.
-    }
-
-    public void sendToUser(String n, String text) {
-        String m = String.format("User-Name: %s\n%s", n, text);
-
-        SendMessage message = new SendMessage();
-        message.setChatId("1934589854");
-        message.setText(m);
-        try {
-            execute(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        TGCommand.isCommand(update);
     }
 }
