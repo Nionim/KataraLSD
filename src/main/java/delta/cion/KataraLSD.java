@@ -26,6 +26,7 @@ public class KataraLSD extends JavaPlugin {
 
     public void onEnable() {
         saveDefaultConfig();
+        TGHandler tgHandler = new TGHandler();
         runScheduler();
         Bukkit.getCommandMap().register(Util.reload().getName(), Util.reload());
     }
