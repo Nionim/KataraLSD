@@ -1,5 +1,8 @@
 Bot-Token: "TelegramBotToken"
 Bot-Name: "KataraLSD"
+
+Debug-Mode: false
+
 # Seconds
 Timer: 1800
 Sleep-At:

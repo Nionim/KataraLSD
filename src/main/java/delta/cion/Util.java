@@ -54,6 +54,10 @@ public class Util {
         };
     }
 
+    public static boolean isDebug() {
+        return p.getConfig().getBoolean("Debug-Mode");
+    }
+
     public static void reloadC(boolean isTG) {
         p.reloadConfig();
         KataraLSD.reloadScheduler();

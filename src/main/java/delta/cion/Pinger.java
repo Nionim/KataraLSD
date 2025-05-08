@@ -117,7 +117,6 @@ public class Pinger {
         JSONObject DATA = u.getJSONObject(0);
 
         String finallyData = parseData(DATA);
-        TGHandler tgHandler = new TGHandler();
         String m = String.format("User-Name: %s\n%s", n, finallyData);
         Sender.sendTelegram(m);
     }

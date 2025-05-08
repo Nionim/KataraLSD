@@ -15,11 +15,13 @@ public class TGCommand {
     }
 
     public static boolean isCommand(Update u) {
+        if (Util.isDebug()) Sender.sendConsole(commands.toString());
         if (!u.hasMessage() || !u.getMessage().hasText()) return false;
         return commands.contains(u.getMessage().getText());
     }
 
     public static void execute(String command) {
+        if (Util.isDebug()) Sender.sendConsole(command);
         switch (command) {
             case "lsd-ping" -> Pinger.PING();
             case "lsd-reload" -> Util.reloadC(false);

@@ -34,6 +34,10 @@ public class TGHandler extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (TGCommand.isCommand(update)) TGCommand.execute(update.getMessage().getText());
+        if (TGCommand.isCommand(update))
+            TGCommand.execute(update.getMessage().getText());
+        else {
+            if (Util.isDebug()) Sender.sendConsole("Command don`t detected!");
+        }
     }
 }

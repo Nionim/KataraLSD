@@ -14,10 +14,6 @@ public class KataraLSD extends JavaPlugin {
         return getPlugin(KataraLSD.class);
     }
 
-    public static int getTaskID() {
-        return taskID;
-    }
-
     public static void runScheduler() {
         BukkitTask bt = Bukkit.getScheduler().runTaskTimer(getInstance(), Pinger::ping, 0, getInstance().getConfig().getLong("Timer") * 20);
         taskID = bt.getTaskId();
