@@ -16,8 +16,10 @@ public class Pinger {
     private static final String URL = "https://presence.roproxy.com/v1/presence/users";
     private static final String JSON_PAYLOAD = "{\"userIds\":[%s]}";
 
+    private static boolean lastActivityIsNull = false;
+
     public static void ping() {
-        if (Util.isSleepTime()) return;
+        if (Util.isSleepTime() && lastActivityIsNull) return;
         for (String s : Util.getIds()) {
             long i = Long.parseLong(Util.getID(s));
             String n = Util.getName(s);
@@ -47,6 +49,7 @@ public class Pinger {
     }
 
     public static String ConnectInfo(List<String> l) {
+        lastActivityIsNull = parseActivity(l.get(5), l.get(4)).contains("Offline");
         return String.format("""
                 User-ID: %s
                 Last-Online: %s
