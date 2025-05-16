@@ -1,5 +1,11 @@
 <H1 align="center">KataraLSD</H1>
 
+<H2 align="center">
+    ESTABLISHED FOR EDUCATIONAL PURPOSES
+    <br>
+    СОЗДАНО В ОБРАЗОВАТЕЛЬНЫХ ЦЕЛЯХ
+</H2>
+
 <p align="center" style="font-size: 15px">
     <b>
         Roblox player activity spyer
