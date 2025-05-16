@@ -3,7 +3,11 @@
 <H2 align="center">
     ESTABLISHED FOR EDUCATIONAL PURPOSES
     <br>
+    THE TITLE DOESN'T MAKE ANY SENSE
+    <br><br>
     СОЗДАНО В ОБРАЗОВАТЕЛЬНЫХ ЦЕЛЯХ
+    <br>
+    НАЗВАНИЕ НЕ ИМЕЕТ НИКАКОГО СМЫСЛА
 </H2>
 
 <p align="center" style="font-size: 15px">
@@ -13,6 +17,12 @@
         Configure timer and users ID`s in config.yml
         <br>
         Optimised for Bukkit (U can host it on Minecraft servers!)
+        <br><br>
+        Сборщик информации об активности игроков Roblox
+        <br>
+        Настройте таймер срабатывания и ID целей в config.yml
+        <br>
+        Оптимизированно для Bukkit (Вы можете запустить это на майнкрафт сервере!)
     </b>
 </p>
 
